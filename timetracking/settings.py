@@ -21,7 +21,7 @@ DEBUG = os.environ['DEBUG']
 
 TEMPLATE_DEBUG = os.environ['DEBUG']
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nameless-cliffs-7820.herokuapp.com']
 
 # Application definition
 
