@@ -32,6 +32,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'timetrack',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -47,8 +48,6 @@ MIDDLEWARE_CLASSES = (
 ROOT_URLCONF = 'timetracking.urls'
 
 WSGI_APPLICATION = 'timetracking.wsgi.application'
-
-
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
