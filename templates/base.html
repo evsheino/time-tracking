@@ -13,8 +13,10 @@
     {% block foundation_css %}
     <link href="{% static "foundation/css/normalize.css" %}" rel="stylesheet"/>
     <link href="{% static "foundation/css/foundation.min.css" %}" rel="stylesheet"/>
+    <link href="{% static "foundation/css/foundation-icons.css" %}" rel="stylesheet"/>
     <link href="{% static "css/foundation-datepicker.css" %}" rel="stylesheet"/>
     {% endblock foundation_css %}  
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
     
     {# Custom CSS #}
     {% block css %}{% endblock css %}
@@ -35,18 +37,22 @@
         <li class="name"><h1><a href="#">Työajanseuranta</a></h1></li>
         <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
+    {% if user.is_authenticated %}
     <section class="top-bar-section"> <!-- Right Nav Section -->
         <ul class="right">
             <li><a href="{% url 'timetrack:new_entry' %}">Uusi merkintä</a></li>
-            <li><a href="#">Merkinnät</a></li>
             <li class="has-dropdown"><a href="#">{{ user.username }}</a>
                 <ul class="dropdown">
                     <li><a href="#">Tili</a></li>
+                    {% if user.is_superuser %}
+                    <li><a href="/admin/">Hallinnointi</a></li>
+                    {% endif %}
                     <li><a id="button-logout" href="#" onclick="document.getElementById('logout-form').submit();">Kirjaudu ulos</a></li>
                 </ul>
             </li>
         </ul>
     </section>
+    {% endif %}
 </nav>
     {# Main content goes here #}
     {% block base_body %}{% endblock base_body %}
