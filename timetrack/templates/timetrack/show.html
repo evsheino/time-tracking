@@ -1,9 +1,14 @@
 {% extends "base.html" %}
 {% block base_body %}
 
-<div class="row">
+<div class="row page-topic">
     <div class="medium-12 columns">
-	<h1>Merkintä</h1>
+	<h1>Työaikamerkintä</h1>
+    </div>
+</div>
+<div class="row index-wrapper">
+    <div class="medium-12 columns">
+	<p>{{ entry.user }}</p>
 	<p>{{ entry.date }}</p>
 	<p>{{ entry.hours }}</p>
 	<p>{{ entry.comment }}</p>
