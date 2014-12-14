@@ -1,0 +1,20 @@
+/* Background pattern from subtlepatterns.com */
+html, body {
+    background-color: #f8f1eb;
+    background: url(../img/tweed.png);
+    background-repeat: repeat;
+    background-attachment: fixed;
+}
+
+.page-topic {
+    background-color: #00d2df;
+    padding: 1em 0em 1em 0em;
+}
+
+.index-wrapper {
+    background-color: rgba(247, 240, 234, 0.7);
+    margin: 1em auto 2em auto !important;
+    width: 95%;
+    padding-bottom: 1em;
+    border-radius: 6px;
+}

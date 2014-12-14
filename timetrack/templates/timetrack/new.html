@@ -2,9 +2,13 @@
 {% load crispy_forms_tags %}
 {% block base_body %}
 
-<div class="row">
+<div class="row page-topic">
     <div class="medium-12 columns">
-	<h1>Uusi merkintä</h1>
+	<h1>Uusi työaikamerkintä</h1>
+    </div>
+</div>
+<div class="row index-wrapper">
+    <div class="medium-12 columns">
 
 	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
