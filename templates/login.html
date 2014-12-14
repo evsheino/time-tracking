@@ -3,7 +3,12 @@
 
 {% block base_body %}
 
-<div class="row">
+<div class="row page-topic">
+    <div class="medium-12 columns">
+	<h1>Sisäänkirjautuminen</h1>
+    </div>
+</div>
+<div class="row index-wrapper">
     <div class="medium-12 columns">
         {% if form.errors %}
         <p>Your username and password didn't match. Please try again.</p>
@@ -13,7 +18,7 @@
             {% csrf_token %}
             {{ form|crispy }}
 
-            <input type="submit" value="login" />
+            <input type="submit" class="button" value="Kirjaudu sisään" />
             <input type="hidden" name="next" value="{{ next }}" />
         </form>
 
