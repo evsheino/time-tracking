@@ -2,7 +2,12 @@
 {% block base_body %}
 <div class="row page-topic">
     <div class="medium-12 columns">
-	<h1>Työajanseuranta</h1>
+	<h1>Tervetuloa työajanseurantasivustolle</h1>
+    </div>
+</div>
+<div class="row index-wrapper">
+    <div class="medium-12 columns">
+	<p>Aloita luomalla <a href="{% url 'timetrack:new_entry' %}">uusi työaikamerkintä</a>
     </div>
 </div>
 {% endblock base_body %}
