@@ -19,3 +19,64 @@ html, body {
     padding-top: 1em;
     border-radius: 6px;
 }
+
+.table {
+    margin: 0em 1em 1em 1em;
+}
+
+.table-topic {
+    font-size: 1.2em;
+    font-weight: bold;
+    padding: 1em 0em 1em 0em;
+}
+
+.table .table-header {
+    padding: 1em 0em 1em 0em;
+    font-weight: bold;
+    font-size: 0.7em;
+    color: white;
+    background-color: #303030;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.table .small-table-header {
+    font-weight: bold;
+    margin-top: 0.5em;
+}
+
+.table-row {
+    padding: 0.4em 0em 0.4em 0em;
+    border-bottom: solid 1px #00d2df;
+    font-size: 0.9em;
+    background-color: #ffffff;
+}
+
+.table-row:nth-child(2n) {
+    background-color: #ecfaff;
+}
+
+.table-row:hover, .table-row:nth-child(2n):hover {
+    background-color: #f2e2c0;
+}
+
+.table-row .button{
+    margin: 0em;
+}
+
+.table-row:first-child {
+
+}
+
+.table-row:last-child {
+    border-bottom: none;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    min-height: 15px;
+    background-color: #ffffff;
+
+}
+
+.table-row:last-child:hover {
+    background-color: #ffffff;
+}

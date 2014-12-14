@@ -8,7 +8,9 @@ from django.forms.models import modelform_factory
 
 @login_required
 def index(request):
-    return render(request, 'timetrack/index.html')
+    entries = WorkEntry.objects.filter(user=request.user).order_by('-date')[:10]
+    context = {'entries': entries}
+    return render(request, 'timetrack/index.html', context)
 
 @login_required
 def show_entry(request, work_entry_id):

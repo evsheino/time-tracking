@@ -7,7 +7,41 @@
 </div>
 <div class="row index-wrapper">
     <div class="medium-12 columns">
-	<p>Aloita luomalla <a href="{% url 'timetrack:new_entry' %}">uusi työaikamerkintä</a>
+	<div class="row">
+	    <div class="medium-12 columns">
+		<div class="table">
+		    <div class="row table-topic">
+			<div class="medium-12 columns status-desc">
+			    Uusimmat omat työaikamerkinnät
+			</div>
+		    </div>
+		    <div class="row table-header hide-for-small-only">
+			<div class="medium-4 columns">
+			    Päivämäärä
+			</div>
+			<div class="medium-2 columns">
+			    Tunnit
+			</div>
+			<div class="medium-6 columns">
+			    Kommentti
+			</div>
+		    </div>
+		    {% for e in entries %}
+		    <div class="row table-row">
+			<div class="medium-4 columns">
+			    {{ e.date }}
+			</div>
+			<div class="medium-2 columns">
+			    {{ e.hours }}
+			</div>
+			<div class="medium-6 columns">
+			    {{ e.comment }}
+			</div>
+		    </div>
+		    {% endfor %}
+		</div>
+	    </div>
+	</div>
     </div>
 </div>
 {% endblock base_body %}
