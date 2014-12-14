@@ -6,3 +6,6 @@ class WorkEntry(models.Model):
     date = models.DateField('päivämäärä')
     hours = models.FloatField('tunnit')
     comment = models.TextField('kommentti')
+
+    def __str__(self):
+        return "%s %s %s % s" % (self.user, self.date, self.hours, self.comment)
