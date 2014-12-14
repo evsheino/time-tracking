@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block base_body %}
+
+<div class="row">
+    <div class="medium-12 columns">
+        {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+        {% endif %}
+
+        <form method="post" action="{% url 'django.contrib.auth.views.login' %}">
+            {% csrf_token %}
+            {{ form|crispy }}
+
+            <input type="submit" value="login" />
+            <input type="hidden" name="next" value="{{ next }}" />
+        </form>
+
+    </div>
+</div>
+{% endblock %}

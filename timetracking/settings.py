@@ -48,6 +48,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+LOGIN_REDIRECT_URL = '/timetrack'
+
 ROOT_URLCONF = 'timetracking.urls'
 
 WSGI_APPLICATION = 'timetracking.wsgi.application'
