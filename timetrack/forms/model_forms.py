@@ -9,6 +9,6 @@ class WorkEntryForm(ModelForm):
         widgets = {
             'date': DateInput(attrs={
                 'class': 'fdatepicker',
-                'data-date-format': 'yyyy-mm-dd'
+                'data-date-format': 'dd.mm.yyyy'
             })
         }

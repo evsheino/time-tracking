@@ -34,6 +34,8 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'timetrack',
     'foundation',
+    'crispy_forms',
+    'crispy_forms_foundation',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -57,7 +59,7 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'fi-fi'
 
 TIME_ZONE = 'Europe/Helsinki'
 DATE_INPUT_FORMATS = (

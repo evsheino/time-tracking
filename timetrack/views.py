@@ -1,6 +1,6 @@
 from django.http import HttpResponse, HttpResponseRedirect
 from django.core.urlresolvers import reverse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from timetrack.models import WorkEntry
 from timetrack.forms.model_forms import WorkEntryForm
 from django.contrib.auth.decorators import login_required
@@ -12,7 +12,9 @@ def index(request):
 
 @login_required
 def show_entry(request, work_entry_id):
-    return HttpResponse("WorkEntry %s" % work_entry_id)
+    entry = get_object_or_404(WorkEntry, pk=work_entry_id)
+
+    return render(request, 'timetrack/show.html', { 'entry': entry })
 
 @login_required
 def new_entry(request):

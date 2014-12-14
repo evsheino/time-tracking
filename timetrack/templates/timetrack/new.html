@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% block base_body %}
+{% load crispy_forms_tags %}
 
 <div class="row">
     <div class="medium-12 columns">
@@ -9,7 +10,7 @@
 
 	<form action="{% url 'timetrack:new_entry' %}" method="post">
 	    {% csrf_token %}
-	    {{ form }}
+	    {{ form|crispy }}
 	    <input type="submit" class="button" value="Tallenna" />
 	</form>
     </div>

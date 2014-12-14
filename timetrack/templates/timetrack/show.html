@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block base_body %}
+
+<div class="row">
+    <div class="medium-12 columns">
+	<h1>Merkintä</h1>
+	<p>{{ entry.date }}</p>
+	<p>{{ entry.hours }}</p>
+	<p>{{ entry.comment }}</p>
+    </div>
+</div>
+{% endblock base_body %}
+
