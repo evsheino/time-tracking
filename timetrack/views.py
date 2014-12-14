@@ -1,4 +1,5 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+from django.core.urlresolvers import reverse
 from django.shortcuts import render
 from timetrack.models import WorkEntry
 from timetrack.forms.model_forms import WorkEntryForm
@@ -15,23 +16,15 @@ def show_entry(request, work_entry_id):
 
 @login_required
 def new_entry(request):
-    f = WorkEntryForm()
-    return render(request, 'timetrack/new.html', { 'form': f })
+    if request.method == 'POST':
+        f = WorkEntryForm(request.POST)
+        if f.is_valid():
+            work_entry = f.save(commit=False)
+            work_entry.user = request.user
+            work_entry.save()
+            return HttpResponseRedirect(reverse('timetrack:show_entry', args=(work_entry.id,)))
+        return render(request, 'timetrack/new.html', { 'form': f })
 
-@login_required
-def create_entry(request):
-    try:
-        work_entry = WorkEntry(request.POST[''])
-    except (KeyError, Choice.DoesNotExist):
-        # Redisplay the question voting form.
-        return render(request, 'polls/detail.html', {
-            'question': p,
-            'error_message': "You didn't select a choice.",
-        })
     else:
-        selected_choice.votes += 1
-        selected_choice.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        return HttpResponseRedirect(reverse('polls:results', args=(p.id,)))
+        f = WorkEntryForm()
+        return render(request, 'timetrack/new.html', { 'form': f })

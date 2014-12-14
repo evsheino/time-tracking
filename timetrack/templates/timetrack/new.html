@@ -7,7 +7,7 @@
 
 	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
 
-	<form action="{% url 'timetrack:create_entry' %}" method="post">
+	<form action="{% url 'timetrack:new_entry' %}" method="post">
 	    {% csrf_token %}
 	    {{ form }}
 	    <input type="submit" class="button" value="Tallenna" />
