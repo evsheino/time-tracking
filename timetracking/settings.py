@@ -33,6 +33,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'timetrack',
+    'foundation',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,12 +52,14 @@ WSGI_APPLICATION = 'timetracking.wsgi.application'
 
 SECRET_KEY = os.environ['SECRET_KEY']
 
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
 # Internationalization
 # https://docs.djangoproject.com/en/1.7/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Helsinki'
 
 USE_I18N = True
 

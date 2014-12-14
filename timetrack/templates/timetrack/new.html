@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block base_body %}
+
+<div class="row">
+    <div class="medium-12 columns">
+	<h1>Uusi merkintä</h1>
+
+	{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+	<form action="{% url 'timetrack:create_entry' %}" method="post">
+	    {% csrf_token %}
+	    {{ form }}
+	    <input type="submit" class="button" value="Tallenna" />
+	</form>
+    </div>
+</div>
+{% endblock base_body %}
+

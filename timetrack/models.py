@@ -3,7 +3,6 @@ from django.contrib.auth.models import User
 
 class WorkEntry(models.Model):
     user = models.ForeignKey(User)
-    date = models.DateField()
-    time_from = models.TimeField('time started')
-    time_to = models.TimeField('time finished')
-    comment = models.TextField()
+    date = models.DateField('päivämäärä')
+    hours = models.FloatField('tunnit')
+    comment = models.TextField('kommentti')
